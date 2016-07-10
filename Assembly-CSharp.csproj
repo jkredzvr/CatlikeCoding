@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Tutorial_Files\1_Build_a_Clock\ClockAnimator.cs" />
+     <Compile Include="Assets\Tutorial_Files\2_FractalArt\Fractal.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
