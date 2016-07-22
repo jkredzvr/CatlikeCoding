@@ -47,6 +47,14 @@
   <ItemGroup>
      <Compile Include="Assets\Tutorial_Files\1_Build_a_Clock\ClockAnimator.cs" />
      <Compile Include="Assets\Tutorial_Files\2_FractalArt\Fractal.cs" />
+     <Compile Include="Assets\Tutorial_Files\3_Atomic Nucleus\Nucleon.cs" />
+     <Compile Include="Assets\Tutorial_Files\3_Atomic Nucleus\NucleonSpawner.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\FPS Counter\FPSCounter.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\FPS Counter\FPSDisplay.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\Scripts\FloatRange.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\Scripts\Stuff.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\Scripts\StuffSpawner.cs" />
+     <Compile Include="Assets\Tutorial_Files\4_Object_Pooling\Scripts\StuffSpawnerRing.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Tutorial_Files/4_Object_Pooling/Stuff Scene.unity
+  isLoaded: 1
+  isActive: 1
