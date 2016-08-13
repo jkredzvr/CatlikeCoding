@@ -24,17 +24,18 @@ public class StuffSpawner : MonoBehaviour {
 
 	void SpawnStuff () {
 		Stuff prefab = stuffPrefabs[Random.Range(0, stuffPrefabs.Length)];
-		Stuff spawn = Instantiate<Stuff>(prefab);
+        //Grab a pooled Instance from a random prefab object (Sphere, Cube, Caltrop, etc)
+		Stuff spawn = prefab.GetPooledInstance<Stuff>();
 
 		spawn.transform.localPosition = transform.position;
 		spawn.transform.localScale = Vector3.one * scale.RandomInRange;
 		spawn.transform.localRotation = Random.rotation;
+        spawn.SetMatieral(stuffMaterial);
 
-		spawn.Body.velocity = transform.up * velocity +
+        spawn.Body.velocity = transform.up * velocity +
 			Random.onUnitSphere * randomVelocity.RandomInRange;
 		spawn.Body.angularVelocity =
 			Random.onUnitSphere * angularVelocity.RandomInRange;
-
-		spawn.GetComponent<MeshRenderer>().material = stuffMaterial;
-	}
+        
+    }
 }
