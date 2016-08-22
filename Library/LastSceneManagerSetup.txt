@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Tutorial_Files/5_Curves_and_Splines/spline_scene.unity
+- path: Assets/Tutorial_Files/7_Rounded_Cubes/Cube Scene.unity
   isLoaded: 1
   isActive: 1

@@ -1,0 +1,127 @@
+warning: LF will be replaced by CRLF in Assets/DestroyOnTouch.cs.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/DestroyOnTouch.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Editor.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Editor/BezierCurveInspector.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Editor/BezierSplineInspector.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Editor/LineInspector.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/ObjPoolScene_DestoyOnLoad.exe.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Prefabs/Caltrop.prefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Prefabs/Cross.prefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Scripts/ObjectPool.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Scripts/PooledObject.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Scripts/SceneSwitcher.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/Stuff Scene 1.unity.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/player_win_x86.pdb.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/4_Object_Pooling/player_win_x86_s.pdb.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/Bezier.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/BezierControlPointMode.cs.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/BezierControlPointMode.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/BezierCurve.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/BezierSpline.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/Blue.mat.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/DecoratorPRefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/DecoratorPRefab/Cube.prefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/DecoratorPRefab/Cylinder.prefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/DecoratorPRefab/Sphere.prefab.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/Green.mat.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/Line.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/Red.mat.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/SplineDecorator.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/SplineWalker.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/SplineWalkerMode.cs.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/SplineWalkerMode.cs.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/catlikecodinglinessplinefiles.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/curves-and-splines-finished.unitypackage.meta.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Assets/Tutorial_Files/5_Curves_and_Splines/spline_scene.unity.meta.
+The file will have its original line endings in your working directory.
+ .gitignore                                         |   2 [32m+[m
+ .vs/CatlikeCoding/v14/.suo                         | Bin [31m51712[m -> [32m95232[m bytes
+ Assembly-CSharp-Editor.csproj                      |  95 [32m++++++[m
+ Assembly-CSharp.csproj                             |  52 [32m++[m[31m--[m
+ Assets/DestroyOnTouch.cs                           |  24 [32m++[m
+ Assets/DestroyOnTouch.cs.meta                      |  12 [32m+[m
+ Assets/Editor.meta                                 |   9 [32m+[m
+ Assets/Editor/BezierCurveInspector.cs              |  80 [32m+++++[m
+ Assets/Editor/BezierCurveInspector.cs.meta         |  12 [32m+[m
+ Assets/Editor/BezierSplineInspector.cs             | 173 [32m+++++++++++[m
+ Assets/Editor/BezierSplineInspector.cs.meta        |  12 [32m+[m
+ Assets/Editor/LineInspector.cs                     |  64 [32m++++[m
+ Assets/Editor/LineInspector.cs.meta                |  12 [32m+[m
+ Assets/Tutorial_Files/2_FractalArt/Fractal.cs      |   2 [32m+[m[31m-[m
+ .../4_Object_Pooling/ObjPoolScene_DestoyOnLoad.exe | Bin [31m0[m -> [32m16815104[m bytes
+ .../ObjPoolScene_DestoyOnLoad.exe.meta             |   8 [32m+[m
+ .../4_Object_Pooling/Prefabs/Caltrop.prefab        | Bin [31m0[m -> [32m9900[m bytes
+ .../4_Object_Pooling/Prefabs/Caltrop.prefab.meta   |   8 [32m+[m
+ .../4_Object_Pooling/Prefabs/Cross.prefab          | Bin [31m0[m -> [32m11452[m bytes
+ .../4_Object_Pooling/Prefabs/Cross.prefab.meta     |   8 [32m+[m
+ .../4_Object_Pooling/Prefabs/Spawner.prefab        | Bin [31m4996[m -> [32m5188[m bytes
+ .../4_Object_Pooling/Scripts/ObjectPool.cs         |  67 [32m+++++[m
+ .../4_Object_Pooling/Scripts/ObjectPool.cs.meta    |  12 [32m+[m
+ .../4_Object_Pooling/Scripts/PooledObject.cs       |  42 [32m+++[m
+ .../4_Object_Pooling/Scripts/PooledObject.cs.meta  |  12 [32m+[m
+ .../4_Object_Pooling/Scripts/SceneSwitcher.cs      |  11 [32m+[m
+ .../4_Object_Pooling/Scripts/SceneSwitcher.cs.meta |  12 [32m+[m
+ .../4_Object_Pooling/Scripts/Stuff.cs              |  28 [32m+[m[31m-[m
+ .../4_Object_Pooling/Scripts/StuffSpawner.cs       |  11 [32m+[m[31m-[m
+ .../4_Object_Pooling/Stuff Scene 1.unity           | Bin [31m0[m -> [32m37772[m bytes
+ .../4_Object_Pooling/Stuff Scene 1.unity.meta      |   8 [32m+[m
+ .../4_Object_Pooling/Stuff Scene.unity             | Bin [31m25928[m -> [32m38420[m bytes
+ .../4_Object_Pooling/player_win_x86.pdb.meta       |   8 [32m+[m
+ .../4_Object_Pooling/player_win_x86_s.pdb          | Bin [31m0[m -> [32m18713600[m bytes
+ .../4_Object_Pooling/player_win_x86_s.pdb.meta     |   8 [32m+[m
+ Assets/Tutorial_Files/5_Curves_and_Splines.meta    |   9 [32m+[m
+ .../Tutorial_Files/5_Curves_and_Splines/Bezier.cs  |  45 [32m+++[m
+ .../5_Curves_and_Splines/Bezier.cs.meta            |  12 [32m+[m
+ .../5_Curves_and_Splines/BezierControlPointMode.cs |   5 [32m+[m
+ .../BezierControlPointMode.cs.meta                 |  12 [32m+[m
+ .../5_Curves_and_Splines/BezierCurve.cs            |  31 [32m++[m
+ .../5_Curves_and_Splines/BezierCurve.cs.meta       |  12 [32m+[m
+ .../5_Curves_and_Splines/BezierSpline.cs           | 224 [32m++++++++++++++[m
+ .../5_Curves_and_Splines/BezierSpline.cs.meta      |  12 [32m+[m
+ .../Tutorial_Files/5_Curves_and_Splines/Blue.mat   | Bin [31m0[m -> [32m4888[m bytes
+ .../5_Curves_and_Splines/Blue.mat.meta             |   8 [32m+[m
+ .../5_Curves_and_Splines/DecoratorPRefab.meta      |   9 [32m+[m
+ .../DecoratorPRefab/Cube.prefab                    | Bin [31m0[m -> [32m8212[m bytes
+ .../DecoratorPRefab/Cube.prefab.meta               |   8 [32m+[m
+ .../DecoratorPRefab/Cylinder.prefab                | Bin [31m0[m -> [32m6660[m bytes
+ .../DecoratorPRefab/Cylinder.prefab.meta           |   8 [32m+[m
+ .../DecoratorPRefab/Sphere.prefab                  | Bin [31m0[m -> [32m6588[m bytes
+ .../DecoratorPRefab/Sphere.prefab.meta             |   8 [32m+[m
+ .../Tutorial_Files/5_Curves_and_Splines/Green.mat  | Bin [31m0[m -> [32m4892[m bytes
+ .../5_Curves_and_Splines/Green.
