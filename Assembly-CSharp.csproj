@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CircleGizmo.cs" />
+     <Compile Include="Assets\MeshDeformer.cs" />
+     <Compile Include="Assets\MeshDeformerInput.cs" />
      <Compile Include="Assets\Tutorial_Files\1_Build_a_Clock\ClockAnimator.cs" />
      <Compile Include="Assets\Tutorial_Files\2_FractalArt\Fractal.cs" />
      <Compile Include="Assets\Tutorial_Files\3_Atomic Nucleus\Nucleon.cs" />
@@ -70,6 +73,7 @@
      <Compile Include="Assets\Tutorial_Files\7_Rounded_Cubes\DestroyOnTouch.cs" />
      <Compile Include="Assets\Tutorial_Files\7_Rounded_Cubes\Grid.cs" />
      <Compile Include="Assets\Tutorial_Files\7_Rounded_Cubes\RoundedCube.cs" />
+     <Compile Include="Assets\Tutorial_Files\8_Cube-Sphere\CubeSphere.cs" />
      <None Include="Assets\Tutorial_Files\7_Rounded_Cubes\Rounded Cube Grid.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

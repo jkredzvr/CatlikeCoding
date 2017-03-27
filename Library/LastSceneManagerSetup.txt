@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Tutorial_Files/7_Rounded_Cubes/Cube Scene.unity
+- path: Assets/Tutorial_Files/9_Mesh_Deformation/MeshDeformedScene.unity
   isLoaded: 1
   isActive: 1

@@ -9,19 +9,18 @@ public class RoundedCube : MonoBehaviour {
 	private Mesh mesh;
 	private Vector3[] vertices;
 	private Vector3[] normals;
+	private Color32[] cubeUV;
 
 	private void Awake () {
 		Generate();
 	}
 
 	private void Generate () {
-        // quicker way to generate components?
-        // instantiate -> and then set it to mesh filter
 		GetComponent<MeshFilter>().mesh = mesh = new Mesh();
 		mesh.name = "Procedural Cube";
 		CreateVertices();
 		CreateTriangles();
-	    CreateColliders();
+		CreateColliders();
 	}
 
 	private void CreateVertices () {
@@ -33,8 +32,8 @@ public class RoundedCube : MonoBehaviour {
 			(ySize - 1) * (zSize - 1)) * 2;
 		vertices = new Vector3[cornerVertices + edgeVertices + faceVertices];
 		normals = new Vector3[vertices.Length];
+		cubeUV = new Color32[vertices.Length];
 
-        //v is a index counter for the vertices
 		int v = 0;
 		for (int y = 0; y <= ySize; y++) {
 			for (int x = 0; x <= xSize; x++) {
@@ -63,120 +62,67 @@ public class RoundedCube : MonoBehaviour {
 
 		mesh.vertices = vertices;
 		mesh.normals = normals;
+		mesh.colors32 = cubeUV;
 	}
 
 	private void SetVertex (int i, int x, int y, int z) {
-        //To round the cube, take the vertices and figure out what the inner vertices should be
-        //find inner cube that fits the roundness
-        //normal is calulated by take the difference between (outter vertix - inner vertex)
-        //recalulate the vertice as the inner+normal vector * roundness
 		Vector3 inner = vertices[i] = new Vector3(x, y, z);
 
-        if (x < roundness) {
-            inner.x = roundness;
-        }
-        else if (x > xSize - roundness) {
-            inner.x = xSize - roundness;
-        }
-        if (y < roundness) {
-            inner.y = roundness;
-        }
-        else if (y > ySize - roundness) {
-            inner.y = ySize - roundness;
-        }
-        if (z < roundness) {
-            inner.z = roundness;
-        }
-        else if (z > zSize - roundness) {
-            inner.z = zSize - roundness;
-        }
+		if (x < roundness) {
+			inner.x = roundness;
+		}
+		else if (x > xSize - roundness) {
+			inner.x = xSize - roundness;
+		}
+		if (y < roundness) {
+			inner.y = roundness;
+		}
+		else if (y > ySize - roundness) {
+			inner.y = ySize - roundness;
+		}
+		if (z < roundness) {
+			inner.z = roundness;
+		}
+		else if (z > zSize - roundness) {
+			inner.z = zSize - roundness;
+		}
 
-        normals[i] = (vertices[i] - inner).normalized;
+		normals[i] = (vertices[i] - inner).normalized;
 		vertices[i] = inner + normals[i] * roundness;
+		cubeUV[i] = new Color32((byte)x, (byte)y, (byte)z, 0);
 	}
 
 	private void CreateTriangles () {
-		//Old code for creating one array of trianges/ one mesh
-        //int quads = (xSize * ySize + xSize * zSize + ySize * zSize) * 2;
-		//int[] triangles = new int[quads * 6];
+		int[] trianglesZ = new int[(xSize * ySize) * 12];
+		int[] trianglesX = new int[(ySize * zSize) * 12];
+		int[] trianglesY = new int[(xSize * zSize) * 12];
+		int ring = (xSize + zSize) * 2;
+		int tZ = 0, tX = 0, tY = 0, v = 0;
 
-        int[] trianglesZ = new int[(xSize * ySize) * 12];
-        int[] trianglesX = new int[(ySize * zSize) * 12];
-        int[] trianglesY = new int[(xSize * zSize) * 12];
+		for (int y = 0; y < ySize; y++, v++) {
+			for (int q = 0; q < xSize; q++, v++) {
+				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < zSize; q++, v++) {
+				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < xSize; q++, v++) {
+				tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
+			}
+			for (int q = 0; q < zSize - 1; q++, v++) {
+				tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
+			}
+			tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
+		}
 
-        int ring = (xSize + zSize) * 2;
-		//int t = 0, v = 0;
-	    int tZ = 0, tX = 0, tY = 0, v=0;
-
-
-        //for (int y = 0; y < ySize; y++, v++) {
-        //	for (int q = 0; q < ring - 1; q++, v++) {
-        //		t = SetQuad(triangles, t, v, v + 1, v + ring, v + ring + 1);
-        //	}
-        //	t = SetQuad(triangles, t, v, v - ring + 1, v + ring, v + 1);
-        //}
-
-        for (int y = 0; y < ySize; y++, v++) {
-            for (int q = 0; q < xSize; q++, v++) {
-                tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
-            }
-            for (int q = 0; q < zSize; q++, v++) {
-                tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
-            }
-            for (int q = 0; q < xSize; q++, v++) {
-                tZ = SetQuad(trianglesZ, tZ, v, v + 1, v + ring, v + ring + 1);
-            }
-            for (int q = 0; q < zSize - 1; q++, v++) {
-                tX = SetQuad(trianglesX, tX, v, v + 1, v + ring, v + ring + 1);
-            }
-            tX = SetQuad(trianglesX, tX, v, v - ring + 1, v + ring, v + 1);
-        }
-
-
-        tY = CreateTopFace(trianglesY, tY, ring);
+		tY = CreateTopFace(trianglesY, tY, ring);
 		tY = CreateBottomFace(trianglesY, tY, ring);
 
-        //mesh.triangles = triangles;
-
-        mesh.subMeshCount = 3;
-        mesh.SetTriangles(trianglesZ, 0);
-        mesh.SetTriangles(trianglesX, 1);
-        mesh.SetTriangles(trianglesY, 2);
-
-    }
-
-    private void CreateColliders()
-    {
-        //create intersecting colliders within the boundaries of the roundness.
-        AddBoxCollider(xSize, ySize - roundness * 2, zSize - roundness * 2);
-        AddBoxCollider(xSize - roundness * 2, ySize, zSize - roundness * 2);
-        AddBoxCollider(xSize - roundness * 2, ySize - roundness * 2, zSize);
-
-        Vector3 min = Vector3.one * roundness;
-        Vector3 half = new Vector3(xSize, ySize, zSize) * 0.5f;
-        Vector3 max = new Vector3(xSize, ySize, zSize) - min;
-
-        AddCapsuleCollider(0, half.x, min.y, min.z);
-        AddCapsuleCollider(0, half.x, min.y, max.z);
-        AddCapsuleCollider(0, half.x, max.y, min.z);
-        AddCapsuleCollider(0, half.x, max.y, max.z);
-
-        AddCapsuleCollider(1, min.x, half.y, min.z);
-        AddCapsuleCollider(1, min.x, half.y, max.z);
-        AddCapsuleCollider(1, max.x, half.y, min.z);
-        AddCapsuleCollider(1, max.x, half.y, max.z);
-
-        AddCapsuleCollider(2, min.x, min.y, half.z);
-        AddCapsuleCollider(2, min.x, max.y, half.z);
-        AddCapsuleCollider(2, max.x, min.y, half.z);
-        AddCapsuleCollider(2, max.x, max.y, half.z);
-    }
-
-    private void AddBoxCollider(float x, float y, float z)
-    {
-        BoxCollider c = gameObject.AddComponent<BoxCollider>();
-        c.size = new Vector3(x, y, z);
-    }
+		mesh.subMeshCount = 3;
+		mesh.SetTriangles(trianglesZ, 0);
+		mesh.SetTriangles(trianglesX, 1);
+		mesh.SetTriangles(trianglesY, 2);
+	}
 
 	private int CreateTopFace (int[] triangles, int t, int ring) {
 		int v = ring * ySize;
@@ -209,15 +155,7 @@ public class RoundedCube : MonoBehaviour {
 		return t;
 	}
 
-    private void AddCapsuleCollider(int direction, float x, float y, float z) {
-        CapsuleCollider c = gameObject.AddComponent<CapsuleCollider>();
-        c.center = new Vector3(x, y, z);
-        c.direction = direction;
-        c.radius = roundness;
-        c.height = c.center[direction] * 2f;
-    }
-
-    private int CreateBottomFace (int[] triangles, int t, int ring) {
+	private int CreateBottomFace (int[] triangles, int t, int ring) {
 		int v = 1;
 		int vMid = vertices.Length - (xSize - 1) * (zSize - 1);
 		t = SetQuad(triangles, t, ring - 1, vMid, 0, 1);
@@ -259,15 +197,53 @@ public class RoundedCube : MonoBehaviour {
 		return i + 6;
 	}
 
-	private void OnDrawGizmos () {
-		if (vertices == null) {
-			return;
-		}
-		for (int i = 0; i < vertices.Length; i++) {
-			Gizmos.color = Color.black;
-			Gizmos.DrawSphere(vertices[i], 0.1f);
-			Gizmos.color = Color.yellow;
-			Gizmos.DrawRay(vertices[i], normals[i]);
-		}
+	private void CreateColliders () {
+		AddBoxCollider(xSize, ySize - roundness * 2, zSize - roundness * 2);
+		AddBoxCollider(xSize - roundness * 2, ySize, zSize - roundness * 2);
+		AddBoxCollider(xSize - roundness * 2, ySize - roundness * 2, zSize);
+
+		Vector3 min = Vector3.one * roundness;
+		Vector3 half = new Vector3(xSize, ySize, zSize) * 0.5f; 
+		Vector3 max = new Vector3(xSize, ySize, zSize) - min;
+
+		AddCapsuleCollider(0, half.x, min.y, min.z);
+		AddCapsuleCollider(0, half.x, min.y, max.z);
+		AddCapsuleCollider(0, half.x, max.y, min.z);
+		AddCapsuleCollider(0, half.x, max.y, max.z);
+		
+		AddCapsuleCollider(1, min.x, half.y, min.z);
+		AddCapsuleCollider(1, min.x, half.y, max.z);
+		AddCapsuleCollider(1, max.x, half.y, min.z);
+		AddCapsuleCollider(1, max.x, half.y, max.z);
+		
+		AddCapsuleCollider(2, min.x, min.y, half.z);
+		AddCapsuleCollider(2, min.x, max.y, half.z);
+		AddCapsuleCollider(2, max.x, min.y, half.z);
+		AddCapsuleCollider(2, max.x, max.y, half.z);
 	}
+
+	private void AddBoxCollider (float x, float y, float z) {
+		BoxCollider c = gameObject.AddComponent<BoxCollider>();
+		c.size = new Vector3(x, y, z);
+	}
+
+	private void AddCapsuleCollider (int direction, float x, float y, float z) {
+		CapsuleCollider c = gameObject.AddComponent<CapsuleCollider>();
+		c.center = new Vector3(x, y, z);
+		c.direction = direction;
+		c.radius = roundness;
+		c.height = c.center[direction] * 2f;
+	}
+
+//	private void OnDrawGizmos () {
+//		if (vertices == null) {
+//			return;
+//		}
+//		for (int i = 0; i < vertices.Length; i++) {
+//			Gizmos.color = Color.black;
+//			Gizmos.DrawSphere(vertices[i], 0.1f);
+//			Gizmos.color = Color.yellow;
+//			Gizmos.DrawRay(vertices[i], normals[i]);
+//		}
+//	}
 }
